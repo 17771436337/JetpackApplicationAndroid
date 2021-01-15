@@ -1,0 +1,10 @@
+include ':cmy_account'
+include ':cmy-home'
+include ':cmy-user'
+include ':lib-image-glide'
+include ':lib-base-ui'
+include ':lib-webview'
+include ':lib-net'
+include ':lib-base'
+include ':app'
+rootProject.name = "Jetpack-Application-Android"

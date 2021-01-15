@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'com.alibaba.arouter'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    /**高版本，添加dataBinding*/
+    buildFeatures{
+        dataBinding = true
+// for view binding :
+// viewBinding = true
+    }
+}
+
+dependencies {
+
+    compileOnly project(path: ':lib-base')
+    compileOnly project(path: ':lib-net')
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    compileOnly rootProject.depsLibs.appcompat
+    compileOnly rootProject.depsLibs.coreKtx
+
+    compileOnly rootProject.depsLibs.constraintlayout
+    compileOnly rootProject.depsLibs.lifecycleViewmodelKtx
+
+    implementation rootProject.depsLibs.koinScop
+    implementation rootProject.depsLibs.KoinViewModel
+    implementation rootProject.depsLibs.koinFragmet
+
+    compileOnly rootProject.depsLibs.retrofit
+
+    compileOnly rootProject.depsLibs.mmkv
+
+    compileOnly rootProject.depsLibs.aroutreApi
+    kapt rootProject.depsLibs.arouterCompiler
+
+
+    compileOnly rootProject.depsLibs.material
+}

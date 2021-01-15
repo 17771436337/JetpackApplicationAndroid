@@ -1,0 +1,101 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.alibaba.arouter'
+}
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+    defaultConfig {
+        applicationId "cmy.project.jetpack_application_android"
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    /**高版本，添加dataBinding*/
+    buildFeatures{
+        dataBinding = true
+// for view binding :
+// viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation rootProject.depsLibs.appcompat
+    implementation rootProject.depsLibs.coreKtx
+    implementation rootProject.depsLibs.material
+    implementation rootProject.depsLibs.constraintlayout
+    implementation rootProject.depsLibs.navigationFragment
+    implementation rootProject.depsLibs.navigationUi
+    implementation rootProject.depsLibs.lifecycleExt
+    implementation rootProject.depsLibs.navigationFragmentKtx
+    implementation rootProject.depsLibs.navigationUiKtx
+
+
+    implementation rootProject.depsLibs.retrofit
+    implementation rootProject.depsLibs.converterGson
+    implementation rootProject.depsLibs.gson
+    implementation rootProject.depsLibs.loggingInterceptor
+
+    implementation rootProject.depsLibs.coroutines
+    implementation rootProject.depsLibs.paging
+
+    implementation rootProject.depsLibs.lifecycleViewmodelKtx
+    implementation rootProject.depsLibs.glide
+//    kapt 'com.github.bumptech.glide:compiler:4.10.0'
+    implementation rootProject.depsLibs.banner
+    implementation rootProject.depsLibs.SmartRefreshLayout
+
+    implementation rootProject.depsLibs.koinScop
+    implementation rootProject.depsLibs.KoinViewModel
+    implementation rootProject.depsLibs.koinFragmet
+
+    implementation rootProject.depsLibs.aroutreApi
+    implementation project(path: ':lib-base-ui')
+    implementation project(path: ':cmy-home')
+    implementation project(path: ':cmy-user')
+    implementation project(path: ':lib-net')
+    implementation project(path: ':lib-base')
+    implementation project(path: ':lib-image-glide')
+    implementation project(path: ':lib-webview')
+    implementation project(path: ':cmy_account')
+    kapt rootProject.depsLibs.arouterCompiler
+
+    implementation rootProject.depsLibs.mmkv
+
+    implementation rootProject.depsLibs.viewPager2
+
+
+    implementation rootProject.depsLibs.room
+    kapt rootProject.depsLibs.roomCompiler
+    implementation rootProject.depsLibs.roomKtx
+
+
+    implementation rootProject.depsLibs.xxpermissions
+}

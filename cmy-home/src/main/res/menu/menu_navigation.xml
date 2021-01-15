@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/group1"
+        android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/account"
+            android:icon="@mipmap/icon_account_management"
+            android:title="账号管理"/>
+
+
+        <item
+            android:id="@+id/book"
+            android:icon="@mipmap/icon_account_management"
+            android:title="书籍"/>
+    </group>
+
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/single_3"
+            android:icon="@mipmap/icon_setting"
+            android:title="github"/>
+
+        <item
+            android:id="@+id/single_4"
+            android:icon="@mipmap/icon_setting"
+            android:title="wechat"/>
+    </group>
+
+    <item android:title="其他">
+        <menu>
+            <item
+                android:id="@+id/item_2"
+                android:icon="@mipmap/icon_setting"
+                android:title="淘宝"/>
+
+            <item
+                android:id="@+id/item_1"
+                android:icon="@mipmap/icon_setting"
+                android:title="百度"/>
+
+            <item
+                android:id="@+id/item_3"
+                android:icon="@mipmap/icon_setting"
+                android:title="腾讯"/>
+        </menu>
+    </item>
+</menu>
