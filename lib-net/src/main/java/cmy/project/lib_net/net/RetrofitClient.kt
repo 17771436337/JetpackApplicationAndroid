@@ -1,6 +1,4 @@
 package cmy.project.lib_net.net
-
-
 import cmy.project.lib_net.BuildConfig
 import cmy.project.lib_net.interceptor.CommonInterceptor
 import okhttp3.OkHttpClient

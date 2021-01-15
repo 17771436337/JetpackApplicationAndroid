@@ -2,8 +2,6 @@ package cmy.project.jetpack_application_android.di
 
 import cmy.project.cmy_account.di.accountRepoModule
 import cmy.project.cmy_account.di.accountViewModelModule
-import cmy.project.cmy_book.di.bookRepoModule
-import cmy.project.cmy_book.di.bookViewModelModule
 import cmy.project.cmy_user.di.loginRepoModule
 import cmy.project.cmy_user.di.loginViewModelModule
 import cmy.project.lib_home.di.homeRepoModule
@@ -27,5 +25,4 @@ val allModule = listOf(
     loginRepoModule, loginViewModelModule,
     homeRepoModule, homeViewModelModule,
     accountRepoModule, accountViewModelModule,
-    bookRepoModule, bookViewModelModule,
 )

@@ -4,7 +4,6 @@
  * 其他使用方式 参照 buildSrc 目录。
  */
 ext {
-
     android = [
             compileSdkVersion: 30,
             buildToolsVersion: "30.0.2",

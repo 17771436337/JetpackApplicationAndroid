@@ -1,5 +1,3 @@
-import Versions.isModule
-
 /**
  * 本项目三方依赖库管理是使用自定义gradle的方式。详见 wan.gradle
  *
@@ -15,7 +13,6 @@ import Versions.isModule
 
 object Versions {
     const val gsonVersion = "2.8.6"
-    const val isModule = false
 }
 
 object Libs {
